@@ -135,31 +135,31 @@ function GetPdfMake(invoice, javascript, callback) {
     // Add ninja logo to the footer
     var dd = JSON.parse(javascript, jsonCallBack);
     var designId = invoice.invoice_design_id;
-    if (!invoice.features.remove_created_by) {
-        var footer = (typeof dd.footer === 'function') ? dd.footer() : dd.footer;
-        if (footer) {
-            if (footer.hasOwnProperty('columns')) {
-                footer.columns.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, 0, 0, 0]})
-            } else {
-                var foundColumns;
-                for (var i=0; i<footer.length; i++) {
-                    var item = footer[i];
-                    if (item.hasOwnProperty('columns')) {
-                        foundColumns = true;
-                        var columns = item.columns;
-                        if (columns[0].hasOwnProperty('stack')) {
-                            columns[0].stack.push({image: logoImages.imageLogo3, alignment: 'left', width: 130, margin: [40, 6, 0, 0]});
-                        } else {
-                            columns.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, -40, 20, 0]})
-                        }
-                    }
-                }
-                if (!foundColumns) {
-                    footer.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, 0, 10, 10]})
-                }
-            }
-        }
-    }
+    // if (!invoice.features.remove_created_by) {
+    //     var footer = (typeof dd.footer === 'function') ? dd.footer() : dd.footer;
+    //     if (footer) {
+    //         if (footer.hasOwnProperty('columns')) {
+    //             footer.columns.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, 0, 0, 0]})
+    //         } else {
+    //             var foundColumns;
+    //             for (var i=0; i<footer.length; i++) {
+    //                 var item = footer[i];
+    //                 if (item.hasOwnProperty('columns')) {
+    //                     foundColumns = true;
+    //                     var columns = item.columns;
+    //                     if (columns[0].hasOwnProperty('stack')) {
+    //                         columns[0].stack.push({image: logoImages.imageLogo3, alignment: 'left', width: 130, margin: [40, 6, 0, 0]});
+    //                     } else {
+    //                         columns.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, -40, 20, 0]})
+    //                     }
+    //                 }
+    //             }
+    //             if (!foundColumns) {
+    //                 footer.push({image: logoImages.imageLogo1, alignment: 'right', width: 130, margin: [0, 0, 10, 10]})
+    //             }
+    //         }
+    //     }
+    // }
 
     // support setting noWrap as a style
     dd.styles.noWrap = {'noWrap': true};

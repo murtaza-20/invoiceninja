@@ -42,7 +42,6 @@
         "digitickets/omnipay-datacash": "~3.0",
         "digitickets/omnipay-gocardlessv2": "dev-payment-fix",
         "digitickets/omnipay-realex": "~5.0",
-        "doctrine/dbal": "2.6.x",
         "dompdf/dompdf": "0.6.2",
         "ezyang/htmlpurifier": "~v4.7",
         "fotografde/omnipay-checkoutcom": "~2.0",
